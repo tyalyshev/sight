@@ -1,8 +1,11 @@
-version: "3.3"
+version: "3.8"
 services:
   app:
-    image: springboot-postgresql
-    build: ./
+    container_name: sight_app
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: publisher-dev
     ports:
       - "8082:8082"
     depends_on:
@@ -10,7 +13,8 @@ services:
     networks:
       - app-network
   db:
-    image: postgres:14
+    container_name: sight_db
+    image: postgres:14.5
     environment:
       POSTGRES_DB: "sightdb"
       POSTGRES_USER: "postgres"
