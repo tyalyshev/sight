@@ -35,7 +35,7 @@ public class Sight {
         double long1 = this.getLongitude() * Math.PI / 180.0;
         double long2 = destinationSight.getLongitude() * Math.PI / 180.0;
 
-        //косинусы и синусы широт и разницы долгот
+        /** косинусы и синусы широт и разницы долгот */
         double cl1 = Math.cos(lat1);
         double cl2 = Math.cos(lat2);
         double sl1 = Math.sin(lat1);
@@ -43,7 +43,7 @@ public class Sight {
         double cdelta = Math.cos(long2 - long1);
         double sdelta = Math.sin(long2 - long1);
 
-        //вычисления длины большого круга
+        /** вычисления длины большого круга */
         double y = Math.sqrt(Math.pow(cl2 * sdelta, 2) + Math.pow(cl1 * sl2 - sl1 * cl2 * cdelta, 2));
         double x = sl1 * sl2 + cl1 * cl2 * cdelta;
         double ad = Math.atan2(y, x);

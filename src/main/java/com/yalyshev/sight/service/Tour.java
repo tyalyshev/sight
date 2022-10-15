@@ -52,7 +52,6 @@ public class Tour {
 
     /**
      * Получает город из тура
-     *
      */
     public Sight getSight(int tourPosition) {
         return (Sight) tour.get(tourPosition);
@@ -92,8 +91,6 @@ public class Tour {
 
     /**
      * Устанавливаем выбранные города в начало и конец тура
-     *
-     *
      */
     public void setDotOneAndDotTwo(int dot1, int dot2) {
         Sight citySwap1 = this.getSight(dot1 - 1);
